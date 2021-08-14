@@ -526,6 +526,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0e9ba14db0ac2489fed9ec2dd983ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  ground: {fileID: 0}
+  area: {fileID: 0}
+  goal: {fileID: 0}
+  block: {fileID: 0}
+  useVectorObs: 0
   speed: 10
 --- !u!114 &548870473
 MonoBehaviour:
@@ -540,7 +549,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: OffsetPerceptionSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - block
+  - goal
+  - wall
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 90
   m_SphereCastRadius: 0.5
@@ -566,7 +578,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - block
+  - goal
+  - wall
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 90
   m_SphereCastRadius: 0.5
@@ -600,7 +615,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: My Behavior
+  m_BehaviorName: PushBlock
   TeamId: 0
   m_UseChildSensors: 1
 --- !u!1 &630871634
